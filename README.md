@@ -1,7 +1,7 @@
 # SPI Module<br><br>
 
 ## Description:
-This SPI implementation can receive and send data trough MISO and MOSI with the following characteristics selection.
+This SPI implementation can receive and send data through MISO and MOSI with the following characteristics selection.
 
 - 4 mode polarity and phase.
 - SCK number of cicles and frequency.
