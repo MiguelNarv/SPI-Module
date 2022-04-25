@@ -18,24 +18,24 @@ use IEEE.NUMERIC_STD.ALL;
 
 ENTITY SPIModule IS
 	GENERIC(   
-	CLKF: integer:=100000000;	-- FPGA clock frequency [Hz].
+	CLKF: integer:=100000000;		-- FPGA clock frequency [Hz].
 	CLKT: integer:=10;			-- FPGA clock period [ns].
-	SCKF: integer:=1000000; 	-- SCK desired frequency [Hz].
+	SCKF: integer:=1000000; 		-- SCK desired frequency [Hz].
 	POL: integer:=1;			-- Polarity 0, 1. 	 
 	PHA: integer:=1;		  	-- Phase 0, 1.
 	CICLES: integer:=8;			-- Number of cicles of SCK.
-	DATAWIDTH: integer:=8		-- Datawidth of MISO and MOSI.
+	DATAWIDTH: integer:=8			-- Datawidth of MISO and MOSI.
 	);
 	PORT(
 	STR: IN std_logic;										-- Triggers the module (active high). 
 	RST: IN std_logic;										-- Controls reset of the module (active low).
 	CLK: IN std_logic; 										-- Clock net.
-	RCVDATA: OUT std_logic_vector(DATAWIDTH-1 DOWNTO 0);	-- Data to receive from slave.
+	RCVDATA: OUT std_logic_vector(DATAWIDTH-1 DOWNTO 0);						-- Data to receive from slave.
 	MISO: IN std_logic;												
 	RDY: OUT std_logic;										-- If low, SPI module is bussy.
 	SCK: OUT std_logic;	 								
-	Cs: OUT std_logic;	  									-- Active low.
-	SNDDATA: IN std_logic_vector(DATAWIDTH-1 DOWNTO 0);		-- Data to sent from master.
+	Cs: OUT std_logic;	  									-- Chip select (active low).
+	SNDDATA: IN std_logic_vector(DATAWIDTH-1 DOWNTO 0);						-- Data to send from master.
 	MOSI: OUT std_logic 									
 	);												  
 	
